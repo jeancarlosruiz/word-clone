@@ -1,12 +1,14 @@
 import React from "react";
 
-function GameForm() {
+function GameForm({ handleSubmitGuess }) {
   const [guess, setGuess] = React.useState("");
 
   function handleSubmit(e) {
     e.preventDefault();
 
-    console.log({ guess });
+    handleSubmitGuess(guess);
+
+    setGuess("");
   }
   return (
     <form onSubmit={handleSubmit} className="guess-input-wrapper">
